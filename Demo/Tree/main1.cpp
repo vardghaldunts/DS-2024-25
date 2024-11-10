@@ -15,25 +15,27 @@ void task1(TreeNode* root) {
         return;
     }
 
-    std::stack<TreeNode*> s;
-    s.push(root);
-    while (!s.empty()) {
-        TreeNode* node = s.top();
-        s.pop();
+    std::stack<TreeNode*> s1, s2;
+    s1.push(root);
 
-        std::cout << node->data << " ";
-        if (node->right != nullptr) {
+    while (!s1.empty()) {
+        TreeNode* node = s1.top();
+        s1.pop();
+        s2.push(node);
 
-            s.push(node->right);
-        }
         if (node->left != nullptr) {
-            s.push(node->left);
+            s1.push(node->left);
         }
+        if (node->right != nullptr) {
+            s1.push(node->right);
+        }
+    }
 
-
+    while (!s2.empty()) {
+        std::cout << s2.top()->data << " ";
+        s2.pop();
     }
 }
-
 
 int main() {
 
