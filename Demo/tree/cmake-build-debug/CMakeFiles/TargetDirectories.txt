@@ -1,0 +1,4 @@
+/home/vard/Homework/DS-2024-25/Demo/tree/cmake-build-debug/CMakeFiles/tree1Demo.dir
+/home/vard/Homework/DS-2024-25/Demo/tree/cmake-build-debug/CMakeFiles/tree2Demo.dir
+/home/vard/Homework/DS-2024-25/Demo/tree/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vard/Homework/DS-2024-25/Demo/tree/cmake-build-debug/CMakeFiles/rebuild_cache.dir
