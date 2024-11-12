@@ -2,40 +2,51 @@
 
 class TreeNode {
 public:
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode* parent;
-    int data;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode *parent;
+    char data;
 
-    TreeNode(int d= 0 , TreeNode* p=nullptr  ,TreeNode* l=nullptr,TreeNode* r =nullptr)
-        : data(d), parent(p), left(l), right(r) {}
+    TreeNode(char d = 0, TreeNode *p = nullptr, TreeNode *l = nullptr, TreeNode *r = nullptr)
+        : data(d), parent(p), left(l), right(r) {
+    }
 };
-void task2( TreeNode* root) {
 
+void task2(TreeNode *root) {
+    if (!root) return;
 
+    TreeNode *cur = root;
+    TreeNode *tmp = nullptr;
 
-    if(root!=nullptr){
+    while (cur->left) {
+        cur = cur->left;
+    }
 
-
-        task2(root->parent);
-        task2(root->left);
-        task2(root->right);
-
-        std::cout<<root->data<<" ";
+    while (cur) {
+        if (!cur->right || cur->right == tmp) {
+            std::cout << cur->data << " ";
+            tmp = cur;
+            cur = cur->parent;
+        } else {
+            cur = cur->right;
+            while (cur->left) {
+                cur = cur->left;
+            }
+        }
     }
 }
 
-int main() {
 
-    TreeNode* root = new TreeNode(1);//a
-    root->left = new TreeNode(2);//b
-    root->right = new TreeNode(3);//c
-    root->left->left = new TreeNode(4);//d
-    root->right->left = new TreeNode(5);//e
-    root->right->right = new TreeNode(6);//f
-    root->right->left->right = new TreeNode(7);//g
-    root->right->right->left = new TreeNode(8);//h
-    root->right->right->right= new TreeNode(9);//i
+int main() {
+    TreeNode *root = new TreeNode('a');
+    root->left = new TreeNode('b', root);
+    root->right = new TreeNode('c', root);
+    root->left->left = new TreeNode('d', root->left);
+    root->right->left = new TreeNode('e', root->right);
+    root->right->right = new TreeNode('f', root->right);
+    root->right->left->right = new TreeNode('g', root->right->left);
+    root->right->right->left = new TreeNode('h', root->right->right);
+    root->right->right->right = new TreeNode('i', root->right->right);
 
     std::cout << "Task 2: ";
     task2(root);

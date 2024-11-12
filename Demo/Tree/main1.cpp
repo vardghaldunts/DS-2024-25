@@ -4,7 +4,7 @@ class TreeNode {
 public:
     TreeNode* left;
     TreeNode* right;
-    int data;
+    char data;
 
     TreeNode(int d = 0, TreeNode* l = nullptr, TreeNode* r = nullptr)
         : left(l), right(r), data(d) {}
@@ -38,16 +38,15 @@ void task1(TreeNode* root) {
 }
 
 int main() {
-
-    TreeNode* root = new TreeNode(1);//a
-    root->left = new TreeNode(2);//b
-    root->right = new TreeNode(3);//c
-    root->left->left = new TreeNode(4);//d
-    root->right->left = new TreeNode(5);//e
-    root->right->right = new TreeNode(6);//f
-    root->right->left->right = new TreeNode(7);//g
-    root->right->right->left = new TreeNode(8);//h
-    root->right->right->right= new TreeNode(9);//i
+    TreeNode* root = new TreeNode('a');
+    root->left = new TreeNode('b');
+    root->right = new TreeNode('c');
+    root->left->left = new TreeNode('d');
+    root->right->left = new TreeNode('e');
+    root->right->right = new TreeNode('f');
+    root->right->left->right = new TreeNode('g');
+    root->right->right->left = new TreeNode('h');
+    root->right->right->right = new TreeNode('i');
 
     std::cout << "Task 1: ";
     task1(root);
