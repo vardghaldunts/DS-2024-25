@@ -9,3 +9,4 @@ add_subdirectory(Demo/BST)
 
 add_subdirectory(Demo/Heap)
 
+add_subdirectory(Demo/HTable)
