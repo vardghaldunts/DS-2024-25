@@ -3,6 +3,11 @@ project(DS_homeworks)
 set(CMAKE_CXX_STANDARD 20)
 
 
+
+add_subdirectory(Demo/Tree)
+
+add_subdirectory(Demo/RedBlackTree)
+
 add_subdirectory(Demo/Tree)
 
 add_subdirectory(Demo/BST)
