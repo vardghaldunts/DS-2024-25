@@ -10,3 +10,7 @@ add_subdirectory(Demo/RedBlackTree)
 
 add_subdirectory(Demo/Tree)
 
+add_subdirectory(Demo/BST)
+
+add_subdirectory(Demo/Heap)
+
